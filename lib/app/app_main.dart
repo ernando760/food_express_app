@@ -6,10 +6,8 @@ class AppMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute("/auth/welcome");
     return MaterialApp.router(
       title: "Food express",
-      // theme: ThemeData(useMaterial3: true),
       routerConfig: Modular.routerConfig,
     );
   }
