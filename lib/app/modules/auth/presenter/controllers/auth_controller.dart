@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:food_express_app/app/modules/core/local/i_local_storage.dart';
 import 'package:food_express_app/app/modules/auth/domain/dto/user_dto.dart';
 import 'package:food_express_app/app/modules/auth/domain/entity/user_entity.dart';
-import 'package:food_express_app/app/modules/auth/domain/infra/local/i_local_storage.dart';
 import 'package:food_express_app/app/modules/auth/domain/usecases/login.dart';
 import 'package:food_express_app/app/modules/auth/domain/usecases/register.dart';
 import 'package:food_express_app/app/modules/auth/domain/vo/vo_email.dart';
