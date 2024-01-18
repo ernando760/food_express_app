@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:food_express_app/app/modules/shared/constant/colors.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.title});
+  const CustomAppBar({Key? key, required this.title, this.leading})
+      : super(key: key);
   final String title;
+  final Widget? leading;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
       backgroundColor: red,
+      leading: leading,
       title: Text(
         title,
         style: const TextStyle(
