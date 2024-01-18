@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:food_express_app/app/modules/product/domain/entities/product_entity.dart';
+import 'package:food_express_app/app/modules/product/presenter/widgets/group_stars_widget.dart';
 import 'package:food_express_app/app/modules/shared/constant/colors.dart';
 import 'package:food_express_app/app/modules/shared/constant/constant.dart';
 import 'package:food_express_app/app/modules/shared/extensions/money_fomatter_extension.dart';
@@ -53,17 +55,15 @@ class ProductCardWidget extends StatelessWidget {
                           color: matteBlack,
                           fontWeight: FontWeight.bold),
                     ),
-                    // ...stars
+                    GroupStars(rating: product.getAverageRatings()),
                   ],
                 ),
                 const SizedBox(height: 5),
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    product.description,
-                    style:
-                        const TextStyle(fontSize: 15, color: Color(0xFF585858)),
-                  ),
+                  child: Text(product.description,
+                      style: const TextStyle(
+                          fontSize: 15, color: Color(0xFF585858))),
                 ),
                 const SizedBox(height: 10),
                 Row(
@@ -78,7 +78,8 @@ class ProductCardWidget extends StatelessWidget {
                           color: matteBlack),
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () => Modular.to
+                          .navigate("/product/product", arguments: product),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: green,
                           shape: RoundedRectangleBorder(
