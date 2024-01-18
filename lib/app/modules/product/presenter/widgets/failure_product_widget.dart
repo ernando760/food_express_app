@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:food_express_app/app/modules/product/presenter/controllers/product_controller.dart';
+import 'package:food_express_app/app/modules/product/presenter/view_model/product_view_model.dart';
 import 'package:food_express_app/app/modules/shared/constant/colors.dart';
 
 class FailureProductWidget extends StatelessWidget {
@@ -26,7 +26,7 @@ class FailureProductWidget extends StatelessWidget {
             ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: green),
                 onPressed: () async =>
-                    await context.read<ProductController>().getAllProducts(),
+                    await context.read<ProductViewModel>().getAllProducts(),
                 child: const Text(
                   "Tente novamente",
                   style: TextStyle(
