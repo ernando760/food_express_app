@@ -21,11 +21,14 @@ class ProductEntity {
       this.comments = const [],
       required this.price});
 
-  double getAllRatings() => comments
-      .map((e) => e.ratings)
-      .reduce((value, element) => value + element);
+  double getAllRatings() => comments.isNotEmpty
+      ? comments
+          .map((e) => e.ratings)
+          .reduce((value, element) => value + element)
+      : 0;
 
-  double getAverageRatings() => getAllRatings() / comments.length;
+  double getAverageRatings() =>
+      comments.isNotEmpty ? getAllRatings() / comments.length : 0;
 
   ProductEntity copyWith({
     String? id,
