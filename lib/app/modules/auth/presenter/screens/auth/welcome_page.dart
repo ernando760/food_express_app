@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:food_express_app/app/modules/auth/presenter/controllers/auth_controller.dart';
 import 'package:food_express_app/app/modules/auth/presenter/screens/widgets/auth_form_widget.dart';
 import 'package:food_express_app/app/modules/auth/presenter/states/auth_state.dart';
+import 'package:food_express_app/app/modules/product/presenter/screens/product_page.dart';
 import 'package:food_express_app/app/modules/shared/constant/colors.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -24,7 +25,7 @@ class WelcomePage extends StatelessWidget {
                 authController.state is LoadedAuthState
                     ? authController.state.user == null
                         ? const AuthFormWidget()
-                        : const HomePage()
+                        : const ProductPage()
                     : const AuthFormWidget(),
                 if (authController.state is LoadingAuthState)
                   Container(
